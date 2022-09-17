@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private string startScreenName;
 
-    public void Start()
+    public void Awake()
     {
         // Singleton Pattern
         if (instance != null)

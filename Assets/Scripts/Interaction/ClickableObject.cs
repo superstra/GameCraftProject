@@ -28,7 +28,6 @@ public class ClickableObject : MonoBehaviour
                 if (!m_left_clicked)
                 {
                     m_left_clicked = true;
-                    Debug.Log(this.gameObject);
                     OnLeftClick?.Invoke(this.gameObject, MousePosition());
                 }
             }

@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public delegate void InventoryAction ();
+    public static event InventoryAction OnModifyInventory;
+
     public static InventoryManager instance;
 
     private List<InventoryItem> items = new();
 
-    void Start()
+    void Awake()
     {
+        Debug.Log("START");
         // Singleton Pattern
         if (instance != null)
         {
@@ -25,6 +29,7 @@ public class InventoryManager : MonoBehaviour
     public void AddItem (InventoryItem item)
     {
         items.Add(item);
+        OnModifyInventory?.Invoke();
     }
 
     public bool CheckItem (InventoryItem item)
@@ -33,7 +38,13 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void RemoveItem(InventoryItem item)
-    {
+    {  
         items.Remove(item);
+        OnModifyInventory?.Invoke();
+    }
+
+    public IEnumerable GetItems ()
+    {
+        return items.ToArray();
     }
 }

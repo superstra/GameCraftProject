@@ -19,7 +19,6 @@ public class InventoryInteraction : BaseInteraction
         {
             foreach (InventoryItem item in items)
             {
-                Debug.Log(InventoryManager.instance);
                 InventoryManager.instance.AddItem(item);
             }
         }
