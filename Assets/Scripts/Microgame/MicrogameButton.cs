@@ -4,13 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Button : MonoBehaviour
+public class MicrogameButton : MonoBehaviour
 {
     [SerializeField] Button button;
 
     private void Start()
     {
-        button.onMouseClick.AddListener(Action);
+        button.onClick.AddListener(Action);
 
     }
 
