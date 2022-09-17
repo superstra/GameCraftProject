@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InteractableBase : MonoBehaviour
+public abstract class BaseInteraction : MonoBehaviour
 {
     private void OnEnable()
     {
@@ -19,8 +19,11 @@ public abstract class InteractableBase : MonoBehaviour
         if (origin == this.gameObject)
         {
             Action();
+            PostAction();
         }
     }
+
+    protected virtual void PostAction() { }
 
     protected abstract void Action();
 }
