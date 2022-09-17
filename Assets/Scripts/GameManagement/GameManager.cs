@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     static public GameManager instance;
+
+    [SerializeField] private string startScreenName;
 
     public void Start()
     {
@@ -22,10 +25,11 @@ public class GameManager : MonoBehaviour
 
     public void StartGame ()
     {
-        Debug.Log("START!");
+        SceneManager.LoadScene(startScreenName);
     }
+
     public void ExitGame()
     {
-        Debug.Log("EXIT...");
+        Application.Quit();
     }
 }
