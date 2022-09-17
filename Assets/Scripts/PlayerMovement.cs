@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
      // FixedUpdate is called 50 times per second
     void FixedUpdate()
     {
-        // movement
+        // gets position + adds a movement * multiplied by the speed * smooth movement modifier
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
