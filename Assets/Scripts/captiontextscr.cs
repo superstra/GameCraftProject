@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class captiontextscr : MonoBehaviour
 {
-    public int lifetime = 10;
+    public int lifetime = 6;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +14,5 @@ public class captiontextscr : MonoBehaviour
         loc.z = loc.z+1;
         transform.position = loc;
         Destroy(gameObject, lifetime);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {     
-        
     }
 }
