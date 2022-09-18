@@ -79,7 +79,9 @@ public class ClickableObject : MonoBehaviour
             return true;
         }
 
-        return Vector3.Distance(transform.position, requireProximityObject.position) < requireProximityRadius;
+        float dist = Vector3.Distance(transform.position, requireProximityObject.position);
+        Debug.Log(dist + " " + transform.position + " " + requireProximityObject.position);
+        return dist < requireProximityRadius;
     }
 
     public static Vector3 MousePosition()
