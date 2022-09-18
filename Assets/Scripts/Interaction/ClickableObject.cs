@@ -29,7 +29,7 @@ public class ClickableObject : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                if (!m_left_clicked)
+                if (!m_left_clicked && CheckPrerequisites())
                 {
                     m_left_clicked = true;
                     OnLeftClick?.Invoke(this.gameObject, MousePosition());
@@ -41,7 +41,7 @@ public class ClickableObject : MonoBehaviour
             }
             if (Input.GetMouseButton(1))
             {
-                if (!m_right_clicked)
+                if (!m_right_clicked && CheckPrerequisites())
                 {
                     OnRightClick?.Invoke(this.gameObject, MousePosition());
                     m_right_clicked = true;
@@ -56,7 +56,7 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (CheckProximity() && CheckPrerequisites())
+        if (CheckProximity())
         {
             OnHoverEnter?.Invoke(this.gameObject, MousePosition());
             m_mouse_hover = true;
@@ -65,7 +65,7 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (CheckProximity() && CheckPrerequisites())
+        if (CheckProximity())
         {
             OnHoverExit?.Invoke(this.gameObject, MousePosition());
             m_mouse_hover = false;
