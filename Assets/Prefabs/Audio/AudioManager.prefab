@@ -51,3 +51,135 @@ MonoBehaviour:
     pitchRange: {x: 1, y: 1}
     volume: 1
     source: {fileID: 0}
+  - id: RTC_transition
+    clip: {fileID: 8300000, guid: d8ac8280fa9c75642b2b4f8cf7609fae, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_1.1
+    clip: {fileID: 8300000, guid: a5ff182b417d8984ab8350023bacce51, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_1.2
+    clip: {fileID: 8300000, guid: a3421f51244ded343bd097a264f093cc, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_1.3
+    clip: {fileID: 8300000, guid: 6181456a49ff8f0489c1e1ad9427d741, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_1.4
+    clip: {fileID: 8300000, guid: 6ce0568785f91404287790ef6e46edef, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_1.5
+    clip: {fileID: 8300000, guid: faea3afb45bf3664ea088fe82a2ffffb, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_2.1
+    clip: {fileID: 8300000, guid: 7d7947a9711b5ba4b9292136294b6a70, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_2.2
+    clip: {fileID: 8300000, guid: 4ad476b0af82b9e46959a8149f06688a, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_2.3
+    clip: {fileID: 8300000, guid: 649ba8389e7760549b94da4bf0f5044c, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_Ending
+    clip: {fileID: 8300000, guid: 60f7808891d0e694a940ab08ccf029b0, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: RTC_Ending
+    clip: {fileID: 8300000, guid: 60f7808891d0e694a940ab08ccf029b0, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: Cloth
+    clip: {fileID: 8300000, guid: fcdb3702245278e419692c834483ff24, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: Paper_1
+    clip: {fileID: 8300000, guid: ea2f96ef141d8ba439af3e42d0b356fb, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: Paper_2
+    clip: {fileID: 8300000, guid: 7af7ce3262ccdfb4bb55850bfa5c8707, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: Step_1
+    clip: {fileID: 8300000, guid: f05747a2cb8b07248a451fe85305015d, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: Step_2
+    clip: {fileID: 8300000, guid: 6367af588420d1148abe04f0c657f8d3, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: Step_3
+    clip: {fileID: 8300000, guid: e86dffdba0393d8468d078b2d7995746, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: Step_4
+    clip: {fileID: 8300000, guid: 2d2090fba727c2545a2fe7da6db7d043, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: UI_Click
+    clip: {fileID: 8300000, guid: 126451fe7146542408df78394a52848d, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: AlarmBeep_1
+    clip: {fileID: 8300000, guid: 35e2dce014b21a4418273f1c682e64fb, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: AlarmBeep_2
+    clip: {fileID: 8300000, guid: 3df33f1568f68dc48b6b83d80f3930a7, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
+  - id: AlarmBeep_3
+    clip: {fileID: 8300000, guid: 6fc1c9b0b1a92cc428b7086e6584a77f, type: 3}
+    loop: 0
+    pitchRange: {x: 1, y: 1}
+    volume: 1
+    source: {fileID: 0}
