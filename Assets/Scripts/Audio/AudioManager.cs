@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     private HashSet<string> currentlyFading = new HashSet<string>();
     private HashSet<string> interruptFade = new HashSet<string>();
 
+    public HashSet<string> currentlyPlaying = new();
+
     public void Awake()
     {
         if (instance != null && instance != this)
@@ -50,6 +52,7 @@ public class AudioManager : MonoBehaviour
         {
             interruptFade.Add(name);
         }
+        currentlyPlaying.Add(name);
         sound.Play();
     }
 
@@ -65,6 +68,7 @@ public class AudioManager : MonoBehaviour
         {
             interruptFade.Add(name);
         }
+        currentlyPlaying.Remove(name);
         sound.Stop();
     }
 

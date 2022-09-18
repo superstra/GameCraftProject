@@ -3,24 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Timer : MonoBehaviour {
 
-    private float time;
+    public static event Action OnTimerStart;
+    public static event Action OnTimerEnd;
+
+    [SerializeField] float initialTime = 300;
+
+    public static Timer instance;
+
+    public float Time { get; private set; }
     private TMP_Text text;
     private bool ended = false;
 
     void Start() {
-        time = 0;
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
+        Time = initialTime;
         text = gameObject.GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
     void Update() {
         if (!ended) {
-            time += Time.deltaTime;
-            int seconds = (int)time % 60;
-            int minutes = (int)time / 60;
+            Time -= UnityEngine.Time.deltaTime;
+            int seconds = (int)Time % 60;
+            int minutes = (int)Time / 60;
 
             if (seconds < 10) {
                 text.text = minutes + ":0" + seconds;
@@ -28,7 +45,7 @@ public class Timer : MonoBehaviour {
                 text.text = minutes + ":" + seconds;
             }
 
-            if (minutes >= 5) {
+            if (Time <= 0) {
                 ended = true;
                 endTimer();
             }
@@ -36,6 +53,6 @@ public class Timer : MonoBehaviour {
     }
 
     private void endTimer() {
-        Debug.Log("Try again");
+        GameManager.instance.StartGame();
     }
 }

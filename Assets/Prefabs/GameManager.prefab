@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc8c42c168403f40812db363e380f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScreenName: GameScene
+  startScreenName: House

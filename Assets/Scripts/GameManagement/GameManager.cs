@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,9 +24,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        Timer.OnTimerEnd += StartGame;
+    }
+
+    private void OnDisable()
+    {
+        Timer.OnTimerEnd -= StartGame;
+    }
+
     public void StartGame ()
     {
+        Debug.Log("PLAY");
+        AudioManager.instance.Play("RTC");
         LoadLevel(name);
+
+    }
+
+    private void Update()
+    {
+
     }
 
     public void ExitGame()
