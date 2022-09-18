@@ -11,9 +11,10 @@ public class InventoryManager : MonoBehaviour
 
     private List<InventoryItem> items = new();
 
+    [SerializeField] private int maxCapacity;
+
     void Awake()
     {
-        Debug.Log("START");
         // Singleton Pattern
         if (instance != null)
         {
@@ -26,10 +27,20 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void AddItem (InventoryItem item)
+    public bool AddItem (InventoryItem item)
     {
-        items.Add(item);
-        OnModifyInventory?.Invoke();
+        if (items.Count <= maxCapacity)
+        {
+            items.Add(item);
+            OnModifyInventory?.Invoke();
+            Debug.Log(items);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
 
     public bool CheckItem (InventoryItem item)
@@ -37,14 +48,20 @@ public class InventoryManager : MonoBehaviour
         return items.Contains(item);
     }
 
-    public void RemoveItem(InventoryItem item)
-    {  
-        items.Remove(item);
+    public bool RemoveItem(InventoryItem item)
+    {
+        bool result = items.Remove(item);
         OnModifyInventory?.Invoke();
+        return result;
     }
 
     public IEnumerable GetItems ()
     {
         return items.ToArray();
+    }
+
+    public bool CheckCapacity (int countToAdd)
+    {
+        return items.Count + countToAdd <= maxCapacity;
     }
 }

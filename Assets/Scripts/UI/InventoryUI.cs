@@ -33,8 +33,8 @@ public class InventoryUI : MonoBehaviour
 
         foreach (InventoryItem item in InventoryManager.instance.GetItems())
         {
-            GameObject g = Instantiate(itemPrefab);
-            g.transform.parent = transform;
+            GameObject g = Instantiate(itemPrefab, transform);
+            g.transform.localScale = Vector3.one;
             Image img = g.GetComponent<Image>();
             img.sprite = item.icon;
         }
