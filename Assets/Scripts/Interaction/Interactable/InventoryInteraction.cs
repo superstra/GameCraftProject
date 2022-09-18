@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryInteraction : BaseInteraction
@@ -29,5 +30,10 @@ public class InventoryInteraction : BaseInteraction
                 InventoryManager.instance.RemoveItem(item);
             }
         }
+    }
+
+    public InventoryItem[] GetItems ()
+    {
+        return items.ToArray();
     }
 }
