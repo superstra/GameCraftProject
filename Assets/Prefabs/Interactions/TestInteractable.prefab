@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requireProximityObject: {fileID: 0}
-  requireProximityRadius: 2
+  requireProximityRadius: 6
 --- !u!114 &436855501080153216
 MonoBehaviour:
   m_ObjectHideFlags: 0
