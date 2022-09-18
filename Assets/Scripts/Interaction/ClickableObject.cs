@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ClickableObject : MonoBehaviour
 {
-    [Tooltip("If this is not null, this component will only send messages when this object is within a certain range")]
-    [SerializeField] private Transform requireProximityObject;
-    [SerializeField] private float requireProximityRadius;
-
     public delegate void MouseAction(GameObject origin, Vector3 position);
     public static event MouseAction OnRightClick;
     public static event MouseAction OnLeftClick;
@@ -56,30 +52,14 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (CheckProximity())
-        {
-            OnHoverEnter?.Invoke(this.gameObject, MousePosition());
-            m_mouse_hover = true;
-        }
+        OnHoverEnter?.Invoke(this.gameObject, MousePosition());
+        m_mouse_hover = true;
     }
 
     private void OnMouseExit()
     {
-        if (CheckProximity())
-        {
-            OnHoverExit?.Invoke(this.gameObject, MousePosition());
-            m_mouse_hover = false;
-        }
-    }
-
-    private bool CheckProximity ()
-    {
-        if (requireProximityObject == null)
-        {
-            return true;
-        }
-
-        return Vector3.Distance(transform.position, requireProximityObject.position) < requireProximityRadius;
+        OnHoverExit?.Invoke(this.gameObject, MousePosition());
+        m_mouse_hover = false;
     }
 
     public static Vector3 MousePosition()
