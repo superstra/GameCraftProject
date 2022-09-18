@@ -56,7 +56,7 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (CheckProximity())
+        if (CheckProximity() && CheckPrerequisites())
         {
             OnHoverEnter?.Invoke(this.gameObject, MousePosition());
             m_mouse_hover = true;
@@ -65,7 +65,7 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (CheckProximity())
+        if (CheckProximity() && CheckPrerequisites())
         {
             OnHoverExit?.Invoke(this.gameObject, MousePosition());
             m_mouse_hover = false;
@@ -80,8 +80,22 @@ public class ClickableObject : MonoBehaviour
         }
 
         float dist = Vector3.Distance(transform.position, requireProximityObject.position);
-        Debug.Log(dist + " " + transform.position + " " + requireProximityObject.position);
         return dist < requireProximityRadius;
+    }
+
+    private bool CheckPrerequisites ()
+    {
+        BasePrerequisite[] prerequisites = GetComponents<BasePrerequisite>();
+
+        foreach (BasePrerequisite prerequisite in prerequisites)
+        {
+            if (!prerequisite.Check())
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static Vector3 MousePosition()
