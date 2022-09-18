@@ -29,7 +29,7 @@ public class ClickableObject : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                if (!m_left_clicked)
+                if (!m_left_clicked && CheckPrerequisites())
                 {
                     m_left_clicked = true;
                     OnLeftClick?.Invoke(this.gameObject, MousePosition());
@@ -41,7 +41,7 @@ public class ClickableObject : MonoBehaviour
             }
             if (Input.GetMouseButton(1))
             {
-                if (!m_right_clicked)
+                if (!m_right_clicked && CheckPrerequisites())
                 {
                     OnRightClick?.Invoke(this.gameObject, MousePosition());
                     m_right_clicked = true;
@@ -80,8 +80,22 @@ public class ClickableObject : MonoBehaviour
         }
 
         float dist = Vector3.Distance(transform.position, requireProximityObject.position);
-        Debug.Log(dist + " " + transform.position + " " + requireProximityObject.position);
         return dist < requireProximityRadius;
+    }
+
+    private bool CheckPrerequisites ()
+    {
+        BasePrerequisite[] prerequisites = GetComponents<BasePrerequisite>();
+
+        foreach (BasePrerequisite prerequisite in prerequisites)
+        {
+            if (!prerequisite.Check())
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static Vector3 MousePosition()
