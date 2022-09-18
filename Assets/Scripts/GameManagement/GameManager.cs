@@ -25,11 +25,16 @@ public class GameManager : MonoBehaviour
 
     public void StartGame ()
     {
-        SceneManager.LoadScene(startScreenName);
+        LoadLevel(name);
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void LoadLevel (string name)
+    {
+        SceneManager.LoadScene(startScreenName);
     }
 }
