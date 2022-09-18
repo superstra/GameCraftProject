@@ -15,14 +15,23 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (movement.x > 0) {
+            animator.SetInteger("Direction", 0);
+        } else if (movement.x < 0) {
+            animator.SetInteger("Direction", 1);
+        } else if (movement.y > 0) {
+            animator.SetInteger("Direction", 2);
+        } else if (movement.y < 0) {
+            animator.SetInteger("Direction", 3);
+        }
     }
 
      // FixedUpdate is called 50 times per second

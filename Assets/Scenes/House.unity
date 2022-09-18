@@ -2965,6 +2965,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4352619255834790137, guid: 47e93858bcfcbff48bd9444d2d38ab97, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352619255834790137, guid: 47e93858bcfcbff48bd9444d2d38ab97, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352619255834790137, guid: 47e93858bcfcbff48bd9444d2d38ab97, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352619255834790137, guid: 47e93858bcfcbff48bd9444d2d38ab97, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4352619255834790138, guid: 47e93858bcfcbff48bd9444d2d38ab97, type: 3}
       propertyPath: m_RootOrder
       value: 0
