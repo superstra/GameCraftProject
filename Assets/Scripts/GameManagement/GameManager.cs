@@ -36,10 +36,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame ()
     {
-        Debug.Log("PLAY");
         AudioManager.instance.Play("RTC");
         LoadLevel(name);
-
     }
 
     private void Update()
